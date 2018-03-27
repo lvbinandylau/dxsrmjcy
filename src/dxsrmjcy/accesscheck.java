@@ -55,7 +55,7 @@ public class accesscheck implements Filter {
         String requestURI = req.getRequestURI();
         if(requestURI.endsWith("login.jsp") || requestURI.endsWith("reg.jsp")|| requestURI.endsWith("valid.jsp"))
         {
-            chain.doFilter(request, response);
+            chain.doFilter(request, response);//test
             return;
         }
         //判断用户是否登录，进行页面的处理
