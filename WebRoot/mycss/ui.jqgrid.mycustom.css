@@ -1,0 +1,75 @@
+.ui-widget.ui-widget-content {
+    background: rgba(0, 0, 0, 0);
+    border-top: 0;
+    border-bottom: 0;
+}
+
+.ui-jqgrid .ui-jqgrid-view {
+    background: rgba(0, 0, 0, 0);
+}
+.ui-jqgrid .ui-pager-control .ui-pager-table td{
+    color:#ffffff;    
+}
+
+.ui-jqgrid .ui-pg-input, .ui-jqgrid .ui-jqgrid-toppager .ui-pg-input{
+    background: rgba(0, 0, 0, 0);
+    
+}
+.ui-jqgrid .ui-pg-selbox, .ui-jqgrid .ui-jqgrid-toppager .ui-pg-selbox{
+    background: rgba(0, 0, 0, 0);
+color: #ffffff;    
+}
+.ui-th-ltr, .ui-jqgrid .ui-jqgrid-htable th.ui-th-ltr{
+    background: rgba(0, 0, 0, 0.3);
+    color:#ffffff;
+}
+.ui-jqgrid tr.jqgrow{
+    background: rgba(0, 0, 0, 0.3);  
+    color:#ffffff;
+    
+}
+.ui-jqgrid .ui-jqgrid-btable tbody tr.jqgrow td{
+    background: rgba(0, 0, 0, 0);      
+    color:#ffffff;
+    
+}
+.ui-jqgrid .ui-userdata {
+    background: rgba(0, 0, 0, 0.3);
+    padding-top: 3px;
+    padding-left: 3px;
+}
+
+.ui-jqgrid .ui-jqgrid-hdiv {
+    background: rgba(0, 0, 0, 0);
+}
+
+.ui-jqgrid .ui-jqgrid-hbox {
+    background: rgba(0, 0, 0, 0);
+}
+
+.ui-jqgrid .ui-jqgrid-htable {
+    background: rgba(0, 0, 0, 0);
+}
+
+#jqGridPager {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+#share {
+    color: #ffffff;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+#mydl{
+    color: #ffffff;
+}
+#dData{
+	padding-top: 3px;
+    margin-top: 0px;
+    border-top-width: 0px;
+}
+#eData{
+	padding-top: 3px;
+    margin-top: 0px;
+    border-top-width: 0px;
+}

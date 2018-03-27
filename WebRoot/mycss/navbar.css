@@ -1,0 +1,27 @@
+.navbar-default .navbar-nav>li>a {
+    font-size: 1em;
+}
+
+#table-info {
+    background: rgba(0, 0, 0, 0.3);
+    color: rgb(255, 255, 255);
+}
+
+.myp {
+    text-align: left;
+}
+
+.mycaption {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+
+#selectUser {
+    background: rgba(0, 0, 0, 0.3);
+    color: rgb(255, 255, 255);
+}
+
+.ui-jqgrid .ui-userdata {
+    height: 3em;
+    padding-left: 2px;
+}

