@@ -1,6 +1,7 @@
 eclipse.preferences.version=1
 encoding//WebRoot/index.jsp=UTF-8
 encoding//WebRoot/reg.jsp=UTF-8
+encoding//src/dxsrmjcy/InitParam.java=UTF-8
 encoding//src/dxsrmjcy/SqlCommand.java=UTF-8
 encoding//src/dxsrmjcy/UploadServlet.java=UTF-8
 encoding//src/dxsrmjcy/WXServer.java=UTF-8

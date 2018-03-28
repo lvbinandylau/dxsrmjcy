@@ -66,7 +66,8 @@ public class login extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		logger.trace("start");
-		String httpsURL = request.getHeader("x-forwarded-proto") + "://" + request.getServerName() + request.getContextPath() + "/";
+		String httpsURL = request.getScheme() + "://" + request.getServerName() +":"+ request.getServerPort() + request.getContextPath() + "/";
+		logger.trace(httpsURL);
 
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
@@ -74,7 +75,6 @@ public class login extends HttpServlet {
 
 		PrintWriter out = response.getWriter();
 		String uname = request.getParameter("name");
-		logger.trace(httpsURL);
 		String passwd = null;
 		try {
 			passwd = InitParam.getMD5(request.getParameter("pwd"));
@@ -99,10 +99,10 @@ public class login extends HttpServlet {
 			logger.trace("mysql load success!");
 			// 首先修改这里的url，user，password
 			conn = DriverManager.getConnection(InitParam.url);
+			logger.trace("mysql conn success!");
 			PreparedStatement pstmt = conn.prepareStatement("select * from user where user=? and pwd=?");
 			pstmt.setString(1, uname);
 			pstmt.setString(2, passwd);
-			logger.trace(pstmt);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				//session值设置

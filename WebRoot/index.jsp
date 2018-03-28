@@ -1,7 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
-String basePath = request.getHeader("x-forwarded-proto") + "://" + request.getServerName() + path + "/";
+String basePath = request.getScheme() + "://" + request.getServerName() +":"+ request.getServerPort() + path + "/";
 %>
     <jsp:include page="header.jsp"></jsp:include>
 
@@ -69,7 +69,7 @@ String basePath = request.getHeader("x-forwarded-proto") + "://" + request.getSe
         <script type="text/javascript">
             $(document).ready(function() {
                 var uid = "${dxsrmjcy_UID}";
-                url = "/SqlCommand";
+                url = "SqlCommand";
                 $.get(
                     url, {
                         command: "5",
@@ -119,7 +119,7 @@ String basePath = request.getHeader("x-forwarded-proto") + "://" + request.getSe
                 });
 
                 $.get(
-                    "/SqlCommand", {
+                    "SqlCommand", {
                         command: "3",
                         uid: uid
                     },
@@ -132,7 +132,7 @@ String basePath = request.getHeader("x-forwarded-proto") + "://" + request.getSe
                         });
                     }
                 );
-                var strURL = "/helloWorld?UID=" + uid;
+                var strURL = "helloWorld?UID=" + uid;
                 $("#jqGrid").jqGrid({
                     url: strURL,
                     datatype: "json",
@@ -170,7 +170,7 @@ String basePath = request.getHeader("x-forwarded-proto") + "://" + request.getSe
                     rownumWidth: 25,
                     multiselect: true,
                     cellEdit: true,
-                    cellurl: "/SqlCommand?command=2",
+                    cellurl: "SqlCommand?command=2",
                     pager: "#jqGridPager",
                     toolbar: [true, "top"],
                     onSelectRow: function(id) {
@@ -180,7 +180,7 @@ String basePath = request.getHeader("x-forwarded-proto") + "://" + request.getSe
                             lastsel = id;
                         }
                     },
-                    editurl: "/SqlCommand?command=0",
+                    editurl: "SqlCommand?command=0",
                 });
                 jQuery("#jqGrid").jqGrid('navGrid', '#jqGridPager', {
                     edit: false,
@@ -211,7 +211,7 @@ String basePath = request.getHeader("x-forwarded-proto") + "://" + request.getSe
                     result = result.substr(0, result.length - 1);
                     var strTo = $("#selectUser").find("option:selected").text();
                     $.ajax({
-                            url: "/SqlCommand",
+                            url: "SqlCommand",
                             data: {
                                 command: "4",
                                 from: uid,

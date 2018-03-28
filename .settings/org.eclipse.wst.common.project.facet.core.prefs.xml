@@ -2,7 +2,6 @@
   <facet id="jst.web"/>
   <facet id="jst.web.jstl"/>
   <facet id="wst.jsdt.web"/>
-  <facet id="maven.deps"/>
   <facet id="java"/>
   <facet id="me.spring">
     <node name="libprov">

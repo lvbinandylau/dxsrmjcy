@@ -1,7 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
     <%
 	String path = request.getContextPath();
-	String basePath = request.getHeader("x-forwarded-proto") + "://" + request.getServerName() + path + "/";
+String basePath = request.getScheme() + "://" + request.getServerName() +":"+ request.getServerPort() + path + "/";
 %>
 
         <!DOCTYPE html>
@@ -37,7 +37,7 @@
 
             <style type="text/css">
                 body {
-                    background-image: url(/pic/bg2.png);
+                    background-image: url("pic/bg2.jpg");
                     background-size: cover;
                 }
 
@@ -175,11 +175,11 @@
 
                 $(document).ready(function () {
                     var test = window.location.pathname;
-                    if (test == "/" || test == "/login.jsp" || test == "/reg.jsp") {
+                    if (test.indexOf('login.jsp') !== -1 || test.indexOf('reg.jsp') !== -1) {
                         document.getElementById("log_reg").style.display = "inline";
                         document.getElementById("log_login").style.display = "inline";
                         document.getElementById("log_logout").style.display = "none";
-                        if (test == "/" || test == "/login.jsp") {
+                        if (test.indexOf('/') !== -1 || test.indexOf('login.jsp') !== -1) {
                             document.getElementById("log_login").setAttribute("class", "active");
                         } else {
                             document.getElementById("log_reg").setAttribute("class", "active");
