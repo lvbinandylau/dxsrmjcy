@@ -24,7 +24,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class InitParam {
-	public static final String url = "jdbc:mysql://192.168.128.128:3306/dxsrmjcy?user=dxsrmjcy&password=Jsk@20170628&useUnicode=true&characterEncoding=UTF-8";
+	public static final String url = "jdbc:mysql://192.168.0.110:3306/dxsrmjcy?user=dxsrmjcy&password=Jsk@20170628&useUnicode=true&characterEncoding=UTF-8";
 	public static final String UPLOAD_PATH = "/home/upload";
 	public static final String UPLOAD_DIRECTORY = "upload";
 	private static final String DEFAULT_CODE = "utf-8";

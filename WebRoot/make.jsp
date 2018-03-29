@@ -1,7 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
   <%
 String path = request.getContextPath();
-String basePath = request.getHeader("x-forwarded-proto") + "://" + request.getServerName() + request.getContextPath() + "/";
+String basePath = request.getScheme() + "://" + request.getServerName() +":"+ request.getServerPort() + path + "/";
 %>
     <jsp:include page="header.jsp"></jsp:include>
     <!DOCTYPE HTML>
@@ -2885,13 +2885,13 @@ String basePath = request.getHeader("x-forwarded-proto") + "://" + request.getSe
               </form>
             </div>
             <div id="dimgcrop" style="width:100%;">
-              <img id="imgcrop" src="pic/bg2.png" style="max-width:100%;" />
+              <img id="imgcrop" src="pic/bg2.jpg" style="max-width:100%;" />
               <div id="wxpreview" style="display:flex;">
                 <div id="wxnews1">
                   <p id="wxtitle">【德检动态】德兴市检察院召开全体干警大会</p>
                   <p id="wxdate"></p>
                   <div style="overflow: hidden;width:180px;height:100px;">
-                    <img id="coverimgcroped" src="pic/bg2.png" style="width: 100%;height:100%;">
+                    <img id="coverimgcroped" src="pic/bg2.jpg" style="width: 100%;height:100%;">
                   </div>
                   <p>查看全文</p>
                 </div>
