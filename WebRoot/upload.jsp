@@ -1,7 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
     <%
 String path = request.getContextPath();
-String basePath = request.getHeader("x-forwarded-proto") + "://" + request.getServerName() + request.getContextPath() + "/";
+String basePath = request.getScheme() + "://" + request.getServerName() +":"+ request.getServerPort() + path + "/";
 %>
         <jsp:include page="header.jsp"></jsp:include>
 
@@ -43,7 +43,7 @@ String basePath = request.getHeader("x-forwarded-proto") + "://" + request.getSe
                     $("#uploader").plupload({
                         // General settings
                         runtimes: 'html5,html4',
-                        url: '/UploadServlet',
+                        url: 'UploadServlet',
                         multipart: true,
                         // Maximum file size
                         max_file_size: '1000mb',
